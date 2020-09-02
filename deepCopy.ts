@@ -3,14 +3,23 @@ export class Graph {
 	add(v: Vertice) {
 		this.vertices.push(v);
 	}
+	constructor(vertices?: Vertice[]) {
+		if (!!vertices) {
+			this.vertices = vertices;
+		}
+	}
 }
 
 export class Vertice {
 	data: number;
 	neighbors: Vertice[];
+	constructor(data: number, neighbors: Vertice[]) {
+		this.data = data;
+		this.neighbors = neighbors;
+	}
 }
 
-export function deepCopyGraph(graph: Graph): Graph {
+export function deepCopy(graph: Graph): Graph {
 	const newGraph = new Graph();
 	traverseBFS(newGraph, graph, {});
 	return newGraph;

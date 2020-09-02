@@ -1,0 +1,22 @@
+{
+  "name": "deep-copy",
+  "version": "1.0.0",
+  "description": "Deep Copy a Graph",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ce-acatl/deep-copy.git"
+  },
+  "author": "Edgardo Ce-acatl Robledo Parra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ce-acatl/deep-copy/issues"
+  },
+  "homepage": "https://github.com/ce-acatl/deep-copy#readme",
+  "dependencies": {
+    "lodash": "^4.17.20"
+  }
+}
