@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import { deepCopy, Graph, Vertice } from './deepCopy';
 
 
-describe('deepCopy', () => {
+describe.only('deepCopy', () => {
 	it('should not mutate the original graph', () => {
 		const graph = new Graph(
 			[
@@ -22,6 +22,8 @@ describe('deepCopy', () => {
 			]
 		);
 		const copyGraph = deepCopy(graph);
+		console.log(JSON.stringify(graph), '11111');
+		console.log(JSON.stringify(copyGraph), '3333333');
 		expect(graph).deep.eq(copyGraph);
 		expect(graph, 'graph should be deep equal copyGraph').deep.eq(copyGraph);
 		copyGraph.vertices[0].data = 12; // was previously 10
