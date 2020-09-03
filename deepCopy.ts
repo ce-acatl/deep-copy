@@ -40,14 +40,16 @@ export function deepCopy(graph: Graph): Graph {
 	return newGraph;
 }
 
-export function deepCopyVertice(v: Vertice, memo: Memo): Vertice {
-	const verticeReference = v.constructor.name;
+export function deepCopyVertice(v: Vertice, memo: Memo, parent = 0, index = 0): Vertice {
+	const verticeReference = `${parent}-${index}`;
 	if (!memo[verticeReference]) {
 		const newCopyVertice = new Vertice(+v.data, []);
 		if (v.neighbors.length > 0) {
+			let o = 0;
 			for (const neighbor of v.neighbors) {
-				const copiedNeighbor = deepCopyVertice(neighbor, memo);
+				const copiedNeighbor = deepCopyVertice(neighbor, memo, parent+1, o);
 				newCopyVertice.neighbors.push(copiedNeighbor);
+				o++;
 			}
 		}
 		memo[verticeReference] = newCopyVertice;

@@ -22,8 +22,6 @@ describe.only('deepCopy', () => {
 			]
 		);
 		const copyGraph = deepCopy(graph);
-		console.log(JSON.stringify(graph), '11111');
-		console.log(JSON.stringify(copyGraph), '3333333');
 		expect(graph).deep.eq(copyGraph);
 		expect(graph, 'graph should be deep equal copyGraph').deep.eq(copyGraph);
 		copyGraph.vertices[0].data = 12; // was previously 10
